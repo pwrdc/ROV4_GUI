@@ -75,7 +75,7 @@ class Camera extends React.Component {
     this.animateRandomRGBImg();
 
     // fetch image converted to base64 from file
-    this.fetchImgTxtBase64('b64.txt');
+    // this.fetchImgTxtBase64('b64.txt');
 
     // change img everytime the server sends a frame
     const io = openSocket('http://localhost:5000');

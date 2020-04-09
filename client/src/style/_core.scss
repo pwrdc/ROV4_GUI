@@ -14,6 +14,7 @@ h1,h2,h3,h4,h5,h6 {
 
 body {
   font-family: 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
 }
 
 .app {
@@ -28,7 +29,7 @@ body {
 .box__title {
   display: flex;
   align-items: center;
-  padding: 5px 10px;
+  padding: 3px 6px;
   width: 100%;
   background: rgb(19,33,66);
   color: #fff;
