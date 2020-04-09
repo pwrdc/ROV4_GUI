@@ -16,17 +16,21 @@ body {
   font-family: 'Ubuntu Mono', monospace;
 }
 
+.app {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 .box {
   
 }
 .box__title {
   display: flex;
   align-items: center;
-  // border: solid 5px lightgrey;
   padding: 5px 10px;
   width: 100%;
   background: rgb(19,33,66);
-  // background: linear-gradient(135deg, rgba(19,33,66,1) 0%, rgba(31,155,170,1) 100%);
   color: #fff;
 }
 
@@ -37,15 +41,9 @@ main {
     flex: 1;
     display: flex;
     flex-flow: column;
-    padding: 20px 20px 0 20px;
-  }
-  .modules--3 {
-
-  }
-  .modules--4 {
-    
   }
 
 .terminals {
+  flex: 1;
   display: flex;
 }

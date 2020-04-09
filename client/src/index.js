@@ -11,17 +11,17 @@ import Terminal from './components/Terminal.js';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app">
         <Header />
         <main>
-          <div className="modules modules--4">
+          <div className="modules">
             <Module title="Module 1" content="sample content sample content" />
             <Module title="Module 2" content="sample content sample content" />
             <Module title="Module 3" content="sample content sample content" />
             <Module title="Module 4" content="sample content sample content" />
           </div>
           <Camera />
-          <div className="modules modules--3">
+          <div className="modules">
             <Module title="Module 5" content="sample content sample content" />
             <Module title="Module 6" content="sample content sample content" />
             <Module title="Module 7" content="sample content sample content" />
