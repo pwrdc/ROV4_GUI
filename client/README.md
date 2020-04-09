@@ -6,7 +6,7 @@ GUI for operating the autonomous ROV4 underwater vehicle.
 
 First you need to install nodejs<br>
 Win (with choco): **choco install nodejs**<br>
-Other: [https://nodejs.org/en/download/](instructions for different platforms)<br>
+Other: [instructions for different platforms](https://nodejs.org/en/download/)<br>
 
 Check nodejs version<br>
 **nodejs --version**
