@@ -8,15 +8,14 @@ First you need to install nodejs<br>
 Win (with choco): **choco install nodejs**<br>
 Other: [instructions for different platforms](https://nodejs.org/en/download/)<br>
 
-Check nodejs version<br>
+Check nodejs version (should be at least 12.16.2)<br>
 **nodejs --version**
 
-Clone the reop and get into the client folder<br>
+Clone the repo and get into the client folder<br>
 **cd client**
 
 Install all needed dependencies<br>
-Win: **npm i**<br>
-Linux: **sudo npm i**
+**npm i** or **sudo npm i**
 
 ### Run the app
 
