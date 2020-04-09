@@ -17,7 +17,7 @@ Clone the repo and get into the client folder<br>
 Install all needed dependencies<br>
 **npm i** or **sudo npm i**
 
-### Run the app
+## Running the app
 
 Start the local nodejs server<br>
 **npm start**
