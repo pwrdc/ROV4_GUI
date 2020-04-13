@@ -12,7 +12,7 @@ socketio = SocketIO(app, cors_allowed_origins='*', logger=True, async_handlers=T
 
 @socketio.on('message')
 def send_frame(msg):
-    print(msg, ":)")
+    print(msg, " : )")
     while 1:
         frameB64 = base64.b64encode(CameraClient(logs=False).frame)
         frame_data = frameB64.decode('utf-8')
