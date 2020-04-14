@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Module extends React.Component {
+export default class Module extends React.Component {
   handleClick() {
     this.props.io.emit('get_ahrs', 'dej mi te ahrsy')
 
@@ -19,5 +19,3 @@ class Module extends React.Component {
     );
   }
 }
-
-export default Module;

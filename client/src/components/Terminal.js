@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Terminal extends React.Component {
+export default class Terminal extends React.Component {
   render() {
     return (
       <div className="box Terminal">
@@ -9,5 +9,3 @@ class Terminal extends React.Component {
     );
   }
 }
-
-export default Terminal;
