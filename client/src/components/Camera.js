@@ -5,7 +5,15 @@ class Camera extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      img: null
+      img:
+        <h2 style={{
+          zIndex: 1,
+          position: 'relative',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          textAlign: 'center',
+          cursor: 'pointer'
+        }}>Kliknij tutaj aby połączyć z socketem</h2>
     }
   }
 
@@ -56,7 +64,8 @@ class Camera extends React.Component {
   renderImg(data) {
     let src = 'data:image/jpg;base64, '+data;
     this.setState({
-      img: src // set image state which will render it
+      // set image state which will render it
+      img: <img src={src} alt="ROV camera output"/>
     });
   }
 
@@ -70,27 +79,49 @@ class Camera extends React.Component {
     });
   }
 
+  handleClick() {
+    const io = openSocket('http://localhost:5000');
+  
+    io.on('connect', () => {
+      console.log('Socket connected');
+      io.send('Client connected');
+    });
+  
+    let i = 0;
+    let prev_second = null;
+    let prev_second_i = null;
+    
+    io.on('message', data => {  
+      let date = new Date();
+      let second = date.getSeconds();
+      if(second !== prev_second) {
+        console.log('Framerate: '+(i-prev_second_i));
+        prev_second_i = i;
+      }
+      prev_second = second;
+
+      console.log('Frame received: '+i);
+      this.renderImg(
+        data
+      );
+      i++
+    });
+  }
+
   componentDidMount() {
     // generate random animation under the img
     this.animateRandomRGBImg();
 
     // fetch image converted to base64 from file
     // this.fetchImgTxtBase64('b64.txt');
-
-    // change img everytime the server sends a frame
-    const io = openSocket('http://localhost:5000');
-    io.on('frame', data => {
-      this.renderImg(
-        data
-      );
-    });
   }
+
 
   render() {
     return (
-      <div className="Camera">
-        <img src={this.state.img} alt="ROV camera output"/>
-        <canvas ref="canvas" width="4" height="3"></canvas>
+      <div className="Camera" onClick={() => this.handleClick()}>
+        {this.state.img}
+        <canvas style={{cursor: 'pointer'}} ref="canvas" width="4" height="3"></canvas>
       </div>
     );
   }
