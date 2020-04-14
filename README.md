@@ -13,7 +13,9 @@ A versatile GUI for operating the autonomous ROV4 underwater vehicle.
     Check nodejs version (should be at least 12.16.2):<br>
     ```nodejs --version```
 
-2. Create a venv inside the server (```cd server```) folder:
+2. Clone the repository.
+
+3. Create a venv inside the server (```cd server```) folder:
 
     Win: ```py -m venv venv```<br>
     Linux: ```python3 -m venv venv```
@@ -25,7 +27,10 @@ A versatile GUI for operating the autonomous ROV4 underwater vehicle.
     And install the required packages inside:<br>
     **(venv)** ```pip install -r requirements.txt```
 
-3. Clone the repo and run ```start.py``` which will:<br>
+4. Change ```IP_ADRESS``` in ```definitions.py``` to your dev machine ip adress, example:<br>
+```IP_ADRESS = '192.168.1.100'```
+
+5. Run ```start.py``` which will:<br>
 
     * check all node_modules and python packages and install them if need be
     * run the node client server, Xavier server and the main server
