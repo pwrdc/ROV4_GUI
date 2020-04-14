@@ -5,15 +5,16 @@ import pickle
 import threading 
 from logpy.LogPy import Logger
 import os
-from definitions import LOG_DIRECOTRY
+from definitions import LOG_DIRECTORY
 from definitions import CAMERA_SERVER_PORT
 from definitions import CAMERAS
+from definitions import IP_ADDRESS
 # from definitions.CAMERAS import FRONT_CAMERA_DEVNAME
 # from definitions.CAMERAS import BOTTOM_CAMERA_DEVNAME
 
 
 class ServerXavier:
-    def __init__(self, host=str(os.system('hostname -I')), port=CAMERA_SERVER_PORT, black_and_white=False, retry_no=5):
+    def __init__(self, host=IP_ADDRESS, port=CAMERA_SERVER_PORT, black_and_white=False, retry_no=5):
         """
         Initialize server
         :param host: [String] host address
@@ -21,7 +22,10 @@ class ServerXavier:
         :param black_and_white: [Bool] Is white and white camera image?
         :param retry_no: [Int] Number of retries
         """
-        self.host = host
+        try:
+            self.host = host
+        except Exception as e:
+            print("Change IP_ADRESS in definitions.py to your dev machine ip adress!")
         self.port = port
         self.bw = black_and_white
         self.retryNo = retry_no
