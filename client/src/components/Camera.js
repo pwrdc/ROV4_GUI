@@ -1,5 +1,4 @@
 import React from 'react';
-import openSocket from 'socket.io-client';
 
 class Camera extends React.Component {
   constructor(props) {
@@ -80,18 +79,14 @@ class Camera extends React.Component {
   }
 
   handleClick() {
-    const io = openSocket('http://localhost:5000');
-  
-    io.on('connect', () => {
-      console.log('Socket connected');
-      io.send('Client connected');
-    });
+    this.props.io.emit('get_frame', 'dej mi te klatki')
   
     let i = 0;
     let prev_second = null;
     let prev_second_i = null;
     
-    io.on('message', data => {  
+    this.props.io.on('frame', (data) => {
+      // calculate framerate 
       let date = new Date();
       let second = date.getSeconds();
       if(second !== prev_second) {
@@ -100,9 +95,10 @@ class Camera extends React.Component {
       }
       prev_second = second;
 
+      // render received frame
       console.log('Frame received: '+i);
       this.renderImg(
-        data
+        data.FRAME
       );
       i++
     });

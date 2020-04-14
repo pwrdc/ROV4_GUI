@@ -1,6 +1,6 @@
 # Frontend
 
-GUI for operating the autonomous ROV4 underwater vehicle.
+The frontend of a versatile GUI for operating the autonomous ROV4 underwater vehicle.
 
 ## Preparing to run the app
 
