@@ -39,9 +39,9 @@ def send_frame(msg):
 @socketio.on('get_ahrs')
 def send_ahrs_info(msg):
     print(f"received:> {msg}")
-    data_ahrs = {'autonomy': '1', 'speed': '60', 'camera': 'ON'}
+    data_ahrs = {'autonomy': 'jeszcze jak', 'speed': '60', 'camera': 'ON'}
 
-    print(f'sending:> {data_ahrs}')
+    print(f'\nsending:> {data_ahrs}')
     emit('ahrs', data_ahrs)
 
 
