@@ -33,15 +33,13 @@ def send_frame(msg):
         frame_str = frameB64.decode('utf-8')
         data_frame = {'FRAME': frame_str}
 
-        print(f'\nsending:> {data_frame}\n')
         emit('frame', data_frame)
 
 @socketio.on('get_ahrs')
 def send_ahrs_info(msg):
-    print(f"received:> {msg}")
+    print(f"\nreceived:> {msg}\n")
     data_ahrs = {'autonomy': 'jeszcze jak', 'speed': '60', 'camera': 'ON'}
 
-    print(f'\nsending:> {data_ahrs}')
     emit('ahrs', data_ahrs)
 
 
