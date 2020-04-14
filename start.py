@@ -13,4 +13,5 @@ if 'linux' in platform:
     # bash serverXavier.py
     os.system(f' gnome-terminal --working-directory "{my_path}/server" -- bash -c "source venv/bin/activate; python3 serverXavier.py;exec bash" ')
 elif 'win' in platform:
-    # windows XDDDDDDDDDD
+    print('windows XDDDDDDDDD')
+	
