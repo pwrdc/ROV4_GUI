@@ -1,5 +1,5 @@
 import os
-import random
+
 class TASKS:
     GATE = False
     #GATE = True
@@ -87,7 +87,7 @@ ANGLE_CASCET = -6 + ANGLE_BUOYS  # TODO: Change 5 to real delta
 ANGLE1_5 = ANGLE_GATE + 720
 ANGLE2 = 10  +ANGLE_GATE +720
 
-IP_ADDRESS = '127.0.1.1'
+IP_ADDRESS = <ENTER YOUR LOCAL ADDRESS>
 CAMERA_SERVER_PORT = 8000
 
 DARKNET_PORT = 8808
