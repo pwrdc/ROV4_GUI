@@ -13,7 +13,7 @@ A versatile GUI for operating the autonomous ROV4 underwater vehicle.
     Check nodejs version (should be at least 12.16.2):<br>
     ```nodejs --version```
 
-2. Clone the repository.
+2. **Clone the repository and create a branch for yourself.**
 
 3. Create a venv inside the server (```cd server```) folder:
 
