@@ -30,7 +30,7 @@ class ServerXavier:
         self.bw = black_and_white
         self.retryNo = retry_no
         # set logger file
-        self.logger = Logger(filename='server_xavier', title="ServerXavier", directory=LOG_DIRECOTRY, logexists='append')
+        self.logger = Logger(filename='server_xavier', title="ServerXavier", directory=LOG_DIRECTORY, logexists='append')
         self.logger.start()
         
         # start up camera

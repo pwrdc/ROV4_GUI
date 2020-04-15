@@ -3,7 +3,7 @@ import struct
 import pickle
 import cv2
 from logpy.LogPy import Logger
-from definitions import LOG_DIRECOTRY
+from definitions import LOG_DIRECTORY
 from definitions import IP_ADDRESS, CAMERA_SERVER_PORT
 
 
