@@ -30,7 +30,7 @@ A versatile GUI for operating the autonomous ROV4 underwater vehicle.
 4. Change ```IP_ADRESS``` in ```definitions.py``` to your dev machine ip adress, example:<br>
 ```IP_ADRESS = '192.168.1.100'```
 
-5. Run ```start.py``` which will:<br>
+5. Exit venv (```deactivate```), get back to root (```cd ../```) and run ```start.py``` which will:<br>
 
     * check all node_modules and python packages and install them if need be
     * run the node client server, Xavier server and the main server
