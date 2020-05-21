@@ -47,7 +47,11 @@ def send_ahrs_info(msg):
 @socketio.on('get_logs')
 def send_logs(msg):
     print(f'\nreceived:> {msg}\n')
-    send_log()
+    SSHconnetion = remoteClient()
+    SSHconnetion._connect()
+    while True:
+        SSHconnetion._download_files()
+        send_log()
 
 
 if __name__ == '__main__':
