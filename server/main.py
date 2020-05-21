@@ -5,9 +5,9 @@ from flask import Flask
 from flask_socketio import SocketIO, send, emit
 from termcolor import colored
 # modules
-from cameraClient import CameraClient
-from remoteClient import RemoteClient
-from logs import send_log
+from .cameraClient import CameraClient
+from .remoteClient import RemoteClient
+from .logs import send_log
 
 # initialize the server
 server = Flask(__name__)
@@ -47,7 +47,7 @@ def send_ahrs_info(msg):
 @socketio.on('get_logs')
 def send_logs(msg):
     print(f'\nreceived:> {msg}\n')
-    SSHconnetion = remoteClient()
+    SSHconnetion = RemoteClient()
     SSHconnetion._connect()
     while True:
         SSHconnetion._download_files()
