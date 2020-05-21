@@ -13,7 +13,7 @@ def send_log(path=local_path):
     log_lines_sent = [0 for i in range(logs_amount)]
     while True:
         logs_amount = len(os.listdir(path))
-        if (logs_amount > logs_amount_prev):
+        if logs_amount > logs_amount_prev:
             for j in range(logs_amount - logs_amount_prev):
                 log_lines_sent.append(0)
             logs_amount_prev = logs_amount

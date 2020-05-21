@@ -48,9 +48,9 @@ def send_ahrs_info(msg):
 def send_logs(msg):
     print(f'\nreceived:> {msg}\n')
     SSHconnetion = RemoteClient()
-    SSHconnetion._connect()
+    SSHconnetion.connect()
     while True:
-        SSHconnetion._download_files()
+        SSHconnetion.download_files()
         send_log()
 
 

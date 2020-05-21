@@ -40,7 +40,7 @@ class RemoteClient:
         except FileNotFoundError as err:
             print(err)
 
-    def _connect(self):
+    def connect(self):
         """
         Establishing connection with remote host via SSH and SCP
         :return: the client
@@ -55,11 +55,11 @@ class RemoteClient:
             print(err)
         return self.client
 
-    def _disconnect(self):
+    def disconnect(self):
         self.client.close()
         self.scp.close()
 
-    def _download_files(self):
+    def download_files(self):
         """
         Downloading files from a remote directory and saving to specified local path
         :return: None
